@@ -1,0 +1,143 @@
+// Fonts Import
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+// Variables
+:root {
+  // Colors
+  --clr-bright-orange: hsl(31, 77%, 52%);
+  --clr-dark-cyan: hsl(184, 100%, 22%);
+  --clr-darker-cyan: hsl(179, 100%, 13%);
+  --clr-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --clr-light-gray: hsl(0, 0%, 95%);
+
+  //Font sizes
+  --ft-body: 1.5rem;
+}
+
+// Default Reset
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--clr-light-gray);
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: var(--ft-body);
+  display: grid;
+  place-items: center;
+  margin: auto;
+  padding: 8rem 3rem;
+  min-height: 100vh;
+}
+
+// Main section
+.main {
+  border-radius: 0.6rem;
+  overflow: hidden;
+  @media (min-width: 678px) {
+    max-width: 100rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "info image";
+  }
+}
+
+.card {
+  &:nth-of-type(1) {
+    background-color: var(--clr-bright-orange);
+  }
+  &:nth-of-type(2) {
+    background-color: var(--clr-dark-cyan);
+  }
+  &:nth-of-type(3) {
+    background-color: var(--clr-darker-cyan);
+  }
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__icon {
+    display: block;
+    width: 5rem;
+    object-fit: cover;
+    margin-bottom: 4rem;
+  }
+  &__heading {
+    font-family: "Big Shoulders Display", cursive;
+    font-weight: bold;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--clr-light-gray);
+    margin-bottom: 4rem;
+  }
+  &__text {
+    color: var(--clr-transparent-white);
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: var(--ft-body);
+    line-height: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  &__btn {
+    display: inline-block;
+    background-color: var(--clr-light-gray);
+    text-decoration: none;
+    padding: 0.7em 1.4em;
+    border-radius: 20rem;
+    border: 1px solid var(--clr-light-gray);
+    white-space: nowrap;
+    margin-top: auto;
+    transition: background-color 0.1s ease-in, color 0.1s ease-in;
+    &--orange {
+      color: var(--clr-bright-orange);
+    }
+    &--cyan {
+      color: var(--clr-dark-cyan);
+    }
+    &--dark-cyan {
+      color: var(--clr-darker-cyan);
+    }
+    &:hover,
+    &:focus {
+      background-color: inherit;
+      color: var(--clr-light-gray);
+    }
+  }
+  @media (min-width: 678px) {
+    &__heading {
+      font-size: 5rem;
+    }
+    &__text {
+      margin-bottom: 6rem;
+      font-size: 1.6rem;
+      line-height: 2.7rem;
+    }
+    &__btn {
+      padding: 0.8em 1.6em;
+    }
+  }
+}
+
+// Footer
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
